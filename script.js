@@ -1,7 +1,6 @@
 
 const TOTAL_QUESTIONS = 20;
 const POINTS_PER_QUESTION = 10;
-console.log("Total de perguntas:", questions.length);
 
 const questions = [
   {
