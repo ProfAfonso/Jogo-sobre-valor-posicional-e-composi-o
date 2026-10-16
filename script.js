@@ -144,8 +144,12 @@ const questions = [
     description: "Mais uma pista antes de chegar ao tesouro!",
     icon: "🧭",
     prompt: "Qual número corresponde a 300 + 70 + 5?",
-    visual: "expanded",
-    number: 375,
+    visual: "parts",
+parts: [
+  ["💯", "3 centenas"],
+  ["🔟", "7 dezenas"],
+  ["🟡", "5 unidades"]
+],
     choices: ["357", "735", "375", "305"],
     answer: "375",
     explanation: "300 representa 3 centenas, 70 representa 7 dezenas e 5 representa 5 unidades. O número é 375."
@@ -321,7 +325,7 @@ function renderVisual(question) {
 
       const value = document.createElement("span");
       value.className = "digit-value";
-      value.textContent = `Vale ${Number(digit) * placeValues[index]}`;
+     value.textContent = "Descubra!";
 
       cell.append(label, number, value);
       wrapper.appendChild(cell);
