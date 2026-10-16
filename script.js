@@ -1,187 +1,247 @@
 
-const TOTAL_QUESTIONS = 12;
+const TOTAL_QUESTIONS = 20;
 const POINTS_PER_QUESTION = 10;
 
 const questions = [
   {
-    type: "COMPOSIÇÃO DE NÚMEROS",
+    type: "COMPOSIÇÃO",
     stage: "Trilha das centenas",
     description: "Use as três pistas para descobrir o número.",
     icon: "🌳",
-    prompt: "Qual número é formado por estas quantidades?",
+    prompt: "Qual número é formado por 4 centenas, 2 dezenas e 6 unidades?",
     visual: "parts",
-    parts: [
-      ["💯", "4 centenas"],
-      ["🔟", "2 dezenas"],
-      ["🟡", "6 unidades"]
-    ],
+    parts: [["💯", "4 centenas"], ["🔟", "2 dezenas"], ["🟡", "6 unidades"]],
     choices: ["426", "462", "246", "624"],
     answer: "426",
-    explanation: "4 centenas valem 400, 2 dezenas valem 20 e 6 unidades valem 6. Portanto, 400 + 20 + 6 = 426."
+    explanation: "400 + 20 + 6 = 426."
   },
   {
     type: "VALOR POSICIONAL",
     stage: "Ponte das dezenas",
-    description: "Cada algarismo tem um valor conforme a posição.",
+    description: "Observe a posição do algarismo.",
     icon: "🌉",
     prompt: "No número 583, quanto vale o algarismo 8?",
     visual: "chart",
     number: 583,
     choices: ["8", "80", "800", "83"],
     answer: "80",
-    explanation: "O 8 está na casa das dezenas. Por isso, seu valor posicional é 8 dezenas, ou seja, 80."
+    explanation: "O 8 está na casa das dezenas. Portanto, vale 80."
   },
   {
     type: "DECOMPOSIÇÃO",
     stage: "Caverna dos números",
-    description: "Descubra como o número foi separado.",
+    description: "Separe o número em suas ordens.",
     icon: "🪨",
     prompt: "Qual é a decomposição correta do número 731?",
     visual: "expanded",
     number: 731,
-    choices: [
-      "700 + 30 + 1",
-      "70 + 300 + 1",
-      "700 + 3 + 10",
-      "7 + 30 + 100"
-    ],
+    choices: ["700 + 30 + 1", "70 + 300 + 1", "700 + 3 + 10", "7 + 30 + 100"],
     answer: "700 + 30 + 1",
-    explanation: "731 tem 7 centenas (700), 3 dezenas (30) e 1 unidade (1)."
+    explanation: "731 tem 7 centenas, 3 dezenas e 1 unidade."
   },
   {
-    type: "COMPOSIÇÃO DE NÚMEROS",
+    type: "COMPOSIÇÃO",
     stage: "Floresta dos algarismos",
-    description: "Reúna as pistas para seguir em frente.",
+    description: "Atenção à posição do zero!",
     icon: "🌲",
     prompt: "Qual número tem 6 centenas, 0 dezenas e 9 unidades?",
     visual: "parts",
-    parts: [
-      ["💯", "6 centenas"],
-      ["🔟", "0 dezenas"],
-      ["🟡", "9 unidades"]
-    ],
+    parts: [["💯", "6 centenas"], ["🔟", "0 dezenas"], ["🟡", "9 unidades"]],
     choices: ["690", "609", "906", "69"],
     answer: "609",
-    explanation: "São 600 + 0 + 9. O zero ocupa a casa das dezenas, formando o número 609."
+    explanation: "600 + 0 + 9 = 609. O zero ocupa a casa das dezenas."
   },
   {
     type: "VALOR POSICIONAL",
     stage: "Montanha dos números",
-    description: "Observe com atenção a posição do algarismo.",
+    description: "Encontre o valor das centenas.",
     icon: "⛰️",
     prompt: "No número 472, quanto vale o algarismo 4?",
     visual: "chart",
     number: 472,
     choices: ["4", "40", "400", "42"],
     answer: "400",
-    explanation: "O 4 está na casa das centenas. Seu valor posicional é 4 centenas, ou seja, 400."
+    explanation: "O 4 está na casa das centenas e vale 400."
   },
   {
     type: "DECOMPOSIÇÃO",
     stage: "Rio das unidades",
-    description: "Separe o número em centenas, dezenas e unidades.",
+    description: "Descubra como o número foi separado.",
     icon: "🌊",
     prompt: "Como podemos decompor o número 265?",
     visual: "expanded",
     number: 265,
-    choices: [
-      "200 + 60 + 5",
-      "20 + 60 + 5",
-      "200 + 6 + 5",
-      "2 + 60 + 500"
-    ],
+    choices: ["200 + 60 + 5", "20 + 60 + 5", "200 + 6 + 5", "2 + 60 + 500"],
     answer: "200 + 60 + 5",
-    explanation: "O número 265 é formado por 200 + 60 + 5: duas centenas, seis dezenas e cinco unidades."
+    explanation: "265 = 200 + 60 + 5."
   },
   {
-    type: "COMPOSIÇÃO DE NÚMEROS",
+    type: "COMPOSIÇÃO",
     stage: "Portal misterioso",
     description: "Resolva o enigma para abrir o portal.",
     icon: "🚪",
     prompt: "Qual número é formado por 8 centenas, 5 dezenas e 3 unidades?",
     visual: "parts",
-    parts: [
-      ["💯", "8 centenas"],
-      ["🔟", "5 dezenas"],
-      ["🟡", "3 unidades"]
-    ],
+    parts: [["💯", "8 centenas"], ["🔟", "5 dezenas"], ["🟡", "3 unidades"]],
     choices: ["853", "835", "583", "358"],
     answer: "853",
-    explanation: "8 centenas valem 800, 5 dezenas valem 50 e 3 unidades valem 3. O resultado é 853."
+    explanation: "800 + 50 + 3 = 853."
   },
   {
     type: "VALOR POSICIONAL",
     stage: "Jardim do tesouro",
-    description: "Encontre o valor escondido no número.",
+    description: "Encontre o valor escondido.",
     icon: "💎",
     prompt: "No número 694, quanto vale o algarismo 9?",
     visual: "chart",
     number: 694,
     choices: ["9", "90", "900", "94"],
     answer: "90",
-    explanation: "O algarismo 9 está na casa das dezenas. Portanto, representa 9 dezenas, ou 90."
+    explanation: "O 9 está na casa das dezenas e vale 90."
   },
   {
     type: "DECOMPOSIÇÃO",
     stage: "Trilha secreta",
-    description: "Escolha a forma correta de separar o número.",
+    description: "O zero também tem uma função!",
     icon: "🗺️",
     prompt: "Qual alternativa representa a decomposição de 408?",
     visual: "expanded",
     number: 408,
-    choices: [
-      "400 + 80",
-      "400 + 8",
-      "40 + 8",
-      "4 + 80"
-    ],
+    choices: ["400 + 80", "400 + 8", "40 + 8", "4 + 80"],
     answer: "400 + 8",
-    explanation: "408 tem 4 centenas, 0 dezenas e 8 unidades. Assim, 400 + 0 + 8 = 408."
+    explanation: "408 = 400 + 0 + 8, ou simplesmente 400 + 8."
   },
   {
-    type: "COMPOSIÇÃO DE NÚMEROS",
+    type: "COMPOSIÇÃO",
     stage: "Último caminho",
-    description: "Mais uma pista antes de chegar ao tesouro!",
+    description: "Reúna as pistas matemáticas.",
     icon: "🧭",
     prompt: "Qual número corresponde a 300 + 70 + 5?",
     visual: "parts",
-parts: [
-  ["💯", "3 centenas"],
-  ["🔟", "7 dezenas"],
-  ["🟡", "5 unidades"]
-],
+    parts: [["💯", "300"], ["🔟", "70"], ["🟡", "5"]],
     choices: ["357", "735", "375", "305"],
     answer: "375",
-    explanation: "300 representa 3 centenas, 70 representa 7 dezenas e 5 representa 5 unidades. O número é 375."
+    explanation: "300 + 70 + 5 forma o número 375."
   },
   {
     type: "VALOR POSICIONAL",
     stage: "Portão final",
-    description: "Descubra o último segredo matemático.",
+    description: "Descubra o segredo das dezenas.",
     icon: "🏰",
     prompt: "No número 826, quanto vale o algarismo 2?",
     visual: "chart",
     number: 826,
     choices: ["2", "20", "200", "26"],
     answer: "20",
-    explanation: "O algarismo 2 está na casa das dezenas. Portanto, vale 20."
+    explanation: "O 2 está na casa das dezenas e vale 20."
   },
   {
     type: "DECOMPOSIÇÃO",
-    stage: "O tesouro perdido",
-    description: "Resolva o último desafio para conquistar o tesouro!",
-    icon: "🏆",
+    stage: "Tesouro escondido",
+    description: "Separe centenas, dezenas e unidades.",
+    icon: "🪙",
     prompt: "Qual é a decomposição correta do número 947?",
     visual: "expanded",
     number: 947,
-    choices: [
-      "900 + 40 + 7",
-      "90 + 400 + 7",
-      "900 + 4 + 7",
-      "9 + 40 + 700"
-    ],
+    choices: ["900 + 40 + 7", "90 + 400 + 7", "900 + 4 + 7", "9 + 40 + 700"],
     answer: "900 + 40 + 7",
-    explanation: "947 tem 9 centenas (900), 4 dezenas (40) e 7 unidades (7)."
+    explanation: "947 = 900 + 40 + 7."
+  },
+  {
+    type: "COMPOSIÇÃO",
+    stage: "Bosque encantado",
+    description: "Mais uma combinação de ordens!",
+    icon: "🌿",
+    prompt: "Qual número tem 2 centenas, 8 dezenas e 4 unidades?",
+    visual: "parts",
+    parts: [["💯", "2 centenas"], ["🔟", "8 dezenas"], ["🟡", "4 unidades"]],
+    choices: ["248", "284", "824", "428"],
+    answer: "284",
+    explanation: "200 + 80 + 4 = 284."
+  },
+  {
+    type: "VALOR POSICIONAL",
+    stage: "Cachoeira dos números",
+    description: "Observe o algarismo destacado.",
+    icon: "💧",
+    prompt: "No número 356, quanto vale o algarismo 3?",
+    visual: "chart",
+    number: 356,
+    choices: ["3", "30", "300", "35"],
+    answer: "300",
+    explanation: "O 3 está na casa das centenas e vale 300."
+  },
+  {
+    type: "DECOMPOSIÇÃO",
+    stage: "Ponte de pedra",
+    description: "Escolha a soma que forma o número.",
+    icon: "🪨",
+    prompt: "Como podemos decompor o número 519?",
+    visual: "expanded",
+    number: 519,
+    choices: ["500 + 10 + 9", "50 + 10 + 9", "500 + 1 + 9", "5 + 10 + 900"],
+    answer: "500 + 10 + 9",
+    explanation: "519 = 500 + 10 + 9."
+  },
+  {
+    type: "COMPOSIÇÃO",
+    stage: "Caminho das estrelas",
+    description: "Encontre o número das pistas.",
+    icon: "⭐",
+    prompt: "Qual número é formado por 7 centenas, 0 dezenas e 2 unidades?",
+    visual: "parts",
+    parts: [["💯", "7 centenas"], ["🔟", "0 dezenas"], ["🟡", "2 unidades"]],
+    choices: ["720", "702", "270", "72"],
+    answer: "702",
+    explanation: "700 + 0 + 2 = 702."
+  },
+  {
+    type: "VALOR POSICIONAL",
+    stage: "Caverna brilhante",
+    description: "Descubra o valor das unidades.",
+    icon: "💎",
+    prompt: "No número 641, quanto vale o algarismo 1?",
+    visual: "chart",
+    number: 641,
+    choices: ["1", "10", "100", "41"],
+    answer: "1",
+    explanation: "O 1 está na casa das unidades, então vale 1."
+  },
+  {
+    type: "DECOMPOSIÇÃO",
+    stage: "Campo das flores",
+    description: "Mais um desafio de decomposição.",
+    icon: "🌷",
+    prompt: "Qual é a decomposição correta do número 880?",
+    visual: "expanded",
+    number: 880,
+    choices: ["800 + 80", "800 + 8", "80 + 8", "800 + 800"],
+    answer: "800 + 80",
+    explanation: "880 tem 8 centenas e 8 dezenas: 800 + 80."
+  },
+  {
+    type: "COMPOSIÇÃO",
+    stage: "Entrada do tesouro",
+    description: "Estamos quase chegando!",
+    icon: "🔐",
+    prompt: "Qual número corresponde a 400 + 90 + 6?",
+    visual: "parts",
+    parts: [["💯", "400"], ["🔟", "90"], ["🟡", "6"]],
+    choices: ["469", "496", "946", "406"],
+    answer: "496",
+    explanation: "400 + 90 + 6 = 496."
+  },
+  {
+    type: "VALOR POSICIONAL",
+    stage: "O tesouro perdido",
+    description: "Resolva o último desafio!",
+    icon: "🏆",
+    prompt: "No número 973, quanto vale o algarismo 7?",
+    visual: "chart",
+    number: 973,
+    choices: ["7", "70", "700", "73"],
+    answer: "70",
+    explanation: "O 7 está na casa das dezenas e vale 70. Você encontrou o tesouro!"
   }
 ];
 
@@ -251,7 +311,6 @@ function startGame() {
 
 function showQuestion() {
   const question = questions[currentQuestion];
-
   questionLocked = false;
   attempts = 0;
 
@@ -259,7 +318,6 @@ function showQuestion() {
     `Desafio ${currentQuestion + 1} de ${TOTAL_QUESTIONS}`;
 
   const progress = (currentQuestion / TOTAL_QUESTIONS) * 100;
-
   progressFill.style.width = `${progress}%`;
   progressPercent.textContent = `${Math.round(progress)}%`;
   progressTrack.setAttribute("aria-valuenow", currentQuestion);
@@ -273,7 +331,6 @@ function showQuestion() {
 
   feedback.hidden = true;
   feedback.className = "feedback";
-
   nextButton.hidden = true;
 
   renderVisual(question);
@@ -311,7 +368,6 @@ function renderVisual(question) {
 
     const digits = String(question.number).padStart(3, "0");
     const labels = ["Centenas", "Dezenas", "Unidades"];
-    const placeValues = [100, 10, 1];
 
     digits.split("").forEach((digit, index) => {
       const cell = document.createElement("div");
@@ -325,7 +381,7 @@ function renderVisual(question) {
 
       const value = document.createElement("span");
       value.className = "digit-value";
-     value.textContent = "Descubra!";
+      value.textContent = "Descubra!";
 
       cell.append(label, number, value);
       wrapper.appendChild(cell);
@@ -362,10 +418,7 @@ function renderOptions(question) {
     text.textContent = choice;
 
     button.append(letter, text);
-
-    button.addEventListener("click", () => {
-      checkAnswer(choice, button);
-    });
+    button.addEventListener("click", () => checkAnswer(choice, button));
 
     optionsContainer.appendChild(button);
   });
@@ -377,7 +430,6 @@ function checkAnswer(choice, selectedButton) {
   }
 
   attempts++;
-
   const question = questions[currentQuestion];
   const buttons = optionsContainer.querySelectorAll(".option-button");
 
@@ -393,7 +445,6 @@ function checkAnswer(choice, selectedButton) {
 
     buttons.forEach((button) => {
       button.disabled = true;
-
       const answerText = button.lastElementChild.textContent;
 
       if (answerText === question.answer) {
@@ -413,10 +464,10 @@ function checkAnswer(choice, selectedButton) {
     const explanation = document.createElement("span");
     explanation.textContent = question.explanation;
 
-    const points = document.createElement("span");
+    const points = document.createElement("p");
     points.textContent = attempts === 1
-      ? ` Você ganhou ${POINTS_PER_QUESTION} pontos!`
-      : " Você acertou após tentar novamente.";
+      ? `Você ganhou ${POINTS_PER_QUESTION} pontos!`
+      : "Você acertou após tentar novamente. Não ganhou pontos nesta questão.";
 
     feedback.append(title, explanation, points);
     feedback.hidden = false;
@@ -433,9 +484,7 @@ function checkAnswer(choice, selectedButton) {
 
   selectedButton.disabled = true;
   selectedButton.classList.add("wrong");
-
-  selectedButton.lastElementChild.textContent =
-    `${choice} ✕`;
+  selectedButton.lastElementChild.textContent = `${choice} ✕`;
 
   feedback.className = "feedback error";
   feedback.replaceChildren();
@@ -482,12 +531,12 @@ function finishGame() {
     endMessage.textContent =
       "Você acertou todos os desafios na primeira tentativa. Que explorador incrível!";
     finalBadge.textContent = "🏆 Mestre do valor posicional";
-  } else if (score >= 70) {
+  } else if (score >= 140) {
     endTitle.textContent = "Parabéns, grande explorador!";
     endMessage.textContent =
       "Você avançou pela aventura e conquistou muitos pontos. Continue praticando!";
     finalBadge.textContent = "🥇 Explorador especialista";
-  } else if (score >= 40) {
+  } else if (score >= 80) {
     endTitle.textContent = "Você está no caminho certo!";
     endMessage.textContent =
       "Você completou a aventura! Pratique mais um pouco para dominar centenas, dezenas e unidades.";
