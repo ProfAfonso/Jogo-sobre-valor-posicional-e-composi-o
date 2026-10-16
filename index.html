@@ -9,10 +9,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
   <main class="game-container">
-
     <header class="top-bar">
       <a class="brand" href="#" aria-label="Aventura dos Números">
         <span class="brand-icon">🧭</span>
@@ -35,7 +33,7 @@
         <h1>O tesouro dos números!</h1>
         <p class="hero-description">
           Uma grande aventura espera por você!
-          Resolva os desafios, descubra os segredos
+          Resolva os 20 desafios, descubra os segredos
           dos números e encontre o tesouro perdido.
         </p>
 
@@ -47,7 +45,7 @@
           </div>
           <div>
             <span class="info-icon">🏆</span>
-            <strong>12 desafios</strong>
+            <strong>20 desafios</strong>
             <small>Uma missão para completar</small>
           </div>
         </div>
@@ -73,17 +71,17 @@
 
       <div class="progress-section">
         <div class="progress-labels">
-          <span id="question-counter">Desafio 1 de 12</span>
-          <span id="progress-percent">8%</span>
+          <span id="question-counter">Desafio 1 de 20</span>
+          <span id="progress-percent">0%</span>
         </div>
         <div
+          id="progress-track"
           class="progress-track"
           role="progressbar"
           aria-label="Progresso da aventura"
           aria-valuemin="0"
-          aria-valuemax="12"
+          aria-valuemax="20"
           aria-valuenow="0"
-          id="progress-track"
         >
           <div id="progress-fill" class="progress-fill"></div>
         </div>
@@ -99,11 +97,16 @@
       </div>
 
       <article class="question-card">
-        <span id="question-type" class="question-type">DESAFIO MATEMÁTICO</span>
+        <span id="question-type" class="question-type">
+          DESAFIO MATEMÁTICO
+        </span>
         <h3 id="question-text">Qual número estamos procurando?</h3>
+
         <div id="question-visual" class="question-visual"></div>
 
-        <p class="answer-instruction">Escolha uma das quatro respostas:</p>
+        <p class="answer-instruction">
+          Escolha uma das quatro respostas:
+        </p>
         <div id="options" class="options-grid"></div>
 
         <div
@@ -130,6 +133,7 @@
         <span>💎</span>
         <span>🏆</span>
       </div>
+
       <span class="eyebrow">MISSÃO CONCLUÍDA</span>
       <h2 id="end-title">Você encontrou o tesouro!</h2>
       <p id="end-message">
@@ -139,10 +143,14 @@
       <div class="final-score">
         <span>⭐ Sua pontuação</span>
         <strong id="final-score">0</strong>
-        <small id="final-correct">0 de 12 desafios acertados na primeira tentativa</small>
+        <small id="final-correct">
+          0 de 20 desafios acertados na primeira tentativa
+        </small>
       </div>
 
-      <div id="final-badge" class="final-badge">🏅 Explorador dos números</div>
+      <div id="final-badge" class="final-badge">
+        🏅 Explorador dos números
+      </div>
 
       <button id="restart-button" class="primary-button">
         Jogar novamente <span>↻</span>
@@ -153,7 +161,6 @@
       <span>🧠 Aprender é uma aventura!</span>
       <span>Centenas • Dezenas • Unidades</span>
     </footer>
-
   </main>
 </body>
 </html>
