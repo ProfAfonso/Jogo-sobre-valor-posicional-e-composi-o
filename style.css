@@ -1,18 +1,11 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-
 :root {
   --navy: #14213d;
   --blue: #2864dc;
   --blue-dark: #1e4fb5;
-  --purple: #7656d8;
   --yellow: #ffcb52;
-  --green: #21875b;
-  --red: #c44747;
   --text: #24324a;
   --muted: #6e7b91;
-  --paper: #ffffff;
-  --background: #f0f4fc;
   --border: #e1e7f1;
 }
 
@@ -28,12 +21,12 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 22px 16px;
-  font-family: "Nunito", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at 10% 10%, #dce8ff 0, transparent 30%),
     radial-gradient(circle at 90% 90%, #fce9bf 0, transparent 27%),
-    var(--background);
+    #f0f4fc;
 }
 
 button {
@@ -89,12 +82,11 @@ a:focus-visible {
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 900;
-  letter-spacing: 0.5px;
 }
 
 .screen {
-  background: var(--paper);
-  border: 1px solid rgba(216, 225, 239, 0.9);
+  background: white;
+  border: 1px solid #d8e1ef;
   border-radius: 25px;
   box-shadow: 0 16px 50px rgba(32, 54, 91, 0.09);
   overflow: hidden;
@@ -448,7 +440,7 @@ h1 {
   text-align: center;
 }
 
-.number-part .part-icon {
+.part-icon {
   margin-bottom: 5px;
   font-size: 27px;
 }
@@ -456,12 +448,6 @@ h1 {
 .number-part strong {
   color: var(--navy);
   font-size: 1.12rem;
-}
-
-.number-part small {
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 0.75rem;
 }
 
 .place-chart {
@@ -689,6 +675,7 @@ h1 {
   0%, 100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-9px);
   }
